@@ -1,6 +1,5 @@
 import express, { Request, Response } from 'express'
-import AccountController from '../Controllers/account'
-import ProductController from '../Controllers/post'
+import ProductController from '../Controllers/product'
 const router = express.Router()
 
 router.get('/', ProductController.GetAll)

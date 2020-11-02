@@ -5,11 +5,18 @@ import { Log } from './logger'
 import router from './routes'
 import mongoose from 'mongoose'
 import bodyParser from 'body-parser'
+import cors from 'cors'
+import helmet from 'helmet'
+import cookieParser from 'cookie-parser'
 
 dotenv.config()
 
 const app = express()
+app.use(helmet())
+app.use(cors())
 app.use(morgan('dev'))
+
+app.use(cookieParser())
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))

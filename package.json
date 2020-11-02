@@ -5,11 +5,18 @@
   "license": "MIT",
   "dependencies": {
     "@typegoose/typegoose": "^7.4.1",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "csurf": "^1.11.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "helmet": "^4.1.1",
     "joi": "^17.3.0",
-    "mongoose": "^5.10.11"
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.11",
+    "nanoid": "^3.1.16"
   },
   "scripts": {
     "start": "node ./bin/app.js",
@@ -19,8 +26,12 @@
     "lint": "eslint ."
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/cookie-parser": "^1.4.2",
+    "@types/cors": "^2.8.8",
     "@types/dotenv-safe": "^8.1.1",
     "@types/express": "^4.17.8",
+    "@types/jsonwebtoken": "^8.5.0",
     "@types/mongoose": "^5.7.37",
     "@types/morgan": "^1.9.2",
     "@types/node": "^14.14.6",

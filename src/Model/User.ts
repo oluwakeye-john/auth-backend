@@ -1,17 +1,21 @@
 import { getModelForClass, prop } from '@typegoose/typegoose'
+import { generateId } from '../Utils'
 
 export class User {
-  @prop()
-  id: string
+  @prop({ default: generateId })
+  id!: string
 
   @prop({ required: true })
   name!: string
 
-  @prop({ required: true })
+  @prop({ required: true, unique: true, lowercase: false })
   email!: string
 
-  @prop({ required: true })
+  @prop({ required: true, select: false })
   password!: string
+
+  @prop({ default: [] })
+  refresh_tokens: string[]
 }
 
 const UserModel = getModelForClass(User)

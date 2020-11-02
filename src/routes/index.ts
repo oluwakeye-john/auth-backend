@@ -1,10 +1,12 @@
 import express from 'express'
+import { protectedRoute } from '../Middlewares/account'
 import accountRouter from './account'
-import postRouter from './post'
+import productRouter from './product'
 
 const router = express.Router()
 
 router.use('/account', accountRouter)
-router.use('/post', postRouter)
+router.use(protectedRoute)
+router.use('/product', productRouter)
 
 export default router
